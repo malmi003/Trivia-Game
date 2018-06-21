@@ -96,30 +96,36 @@ let winCount = 0,
     unansweredCount = 0,
     intervalTimer = 20,
     currentVegeIndex = 0,
-    currentVegeName = "";
-btnId = "";
-
+    currentVegeName = "",
+    btnId = "",
+    setTimer;
 
 // -------------declaring functions--------------
+
+function runTimer() {
+    clearInterval(setTimer);
+    intervalTimer = 20;
+    $("#timer").html(intervalTimer + " seconds");
+    setTimer = setInterval(decrementTimer, 1000);
+};
 
 function decrementTimer() {
     intervalTimer--;
     $("#timer").html(intervalTimer + " seconds");
-    // return intervalTimer;
-}
-
-function resetInterval() {
-    // clearInterval(interval);
-
-    setInterval(decrementTimer, 1000);
+    if (intervalTimer === 0) {
+        stopTimer();
+        timesUp();
+    }
 };
+function stopTimer() {
+    clearInterval(setTimer);
+}
 
 function increaseCurrentVegeIndex() {
     currentVegeIndex++;
 };
 
 function nextQuestion() {
-    //displays next questions/answers
     if (currentVegeIndex < vegeArray.length) {
         plantPicSrc = vegeArray[currentVegeIndex].vegePic;
         $("#plantPic").attr("src", plantPicSrc);
@@ -139,7 +145,9 @@ function nextQuestion() {
         }
         $("#statusSection").addClass("d-none");
         $("#quizSection").removeClass("d-none");
-        intervalTimer = 20;
+
+        runTimer();
+
     } else {
         lastPage();
     }
@@ -155,6 +163,7 @@ function onWin() {
     let plantName = vegeArray[currentVegeIndex].vegetableName;
     $("#plantName").html(`The answer was ${plantName}.`);
     currentVegeIndex++;
+    clearInterval(setTimer);
     setTimeout(nextQuestion, 4000);
 }
 
@@ -168,6 +177,7 @@ function onLoss() {
     let plantName = vegeArray[currentVegeIndex].vegetableName;
     $("#plantName").html(`The answer was ${plantName}.`);
     currentVegeIndex++;
+    clearInterval(setTimer);
     setTimeout(nextQuestion, 4000);
 }
 
@@ -181,11 +191,13 @@ function timesUp() {
     let plantName = vegeArray[currentVegeIndex].vegetableName;
     $("#plantName").html(`The answer was ${plantName}.`);
     currentVegeIndex++;
+    clearInterval(setTimer);
     setTimeout(nextQuestion, 4000);
 }
 
 function lastPage() {
     $("#summary").removeClass("d-none");
+    $("#summaryTitle").html("How'd you do?");
     $("#winCount").html(winCount);
     $("#lossCount").html(lossCount);
     $("#unansweredCount").html(unansweredCount);
@@ -194,10 +206,12 @@ function lastPage() {
 }
 
 function restart() {
-    //start the game over again from the beginning
     $("#startBtn").removeClass("d-none");
     $("#quizSection").addClass("d-none");
     $("#statusSection").addClass("d-none");
+    winCount = 0;
+    lossCount = 0;
+    unansweredCount = 0;
 }
 
 $(document).ready(function () {
@@ -205,28 +219,21 @@ $(document).ready(function () {
     $("#summary").addClass("d-none");
     restart();
 
+
     $("#startBtn").on("click", function () {
         $("#startBtn").addClass("d-none");
         $("#summary").addClass("d-none");
-        resetInterval();
         nextQuestion();
     });
 
-    if (intervalTimer >= 0) {
-        $("#quizSection button").on("click", function () {
-            //capture which button was clicked...
-            let clickId = this.id;
-            if (`#${clickId} span` === btnId) {
-                onWin();
-            } else {
-                onLoss();
-            }
-        });
-    } else {
-        //can't get this to work
-        console.log("do something else")
-        timesUp();
-    }
+    $("#quizSection button").on("click", function () {
+        let clickId = this.id;
+        if (`#${clickId} span` === btnId) {
+            onWin();
+        } else {
+            onLoss();
+        }
+    });
 
     $("#startBtn").on("click", function () {
         $("#startBtn").addClass("d-none");

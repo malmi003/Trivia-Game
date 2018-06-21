@@ -7,8 +7,6 @@ russian green: rgba(103, 128, 92, 1); */
 
 /* --------------------global------------------- */
 
-
-/* may need to set min-height so doesn't readjust every time */
 html {
     position: relative;
     min-height: 100%;
@@ -17,7 +15,8 @@ body {
     background:linear-gradient(0deg,rgba(108, 89, 83, .2),rgba(108, 89, 83, .2)), url("../images/zbynek-burival-626142-unsplash.jpg");
     color: rgba(213, 198, 189, 1);
     background-size: cover;
-    font-family: 'Exo 2', sans-serif;
+    font-family: 'Neucha', cursive;
+    letter-spacing: .1rem;
     margin-bottom: 100px; /* Margin bottom by footer height */
     text-align: center;
 }
@@ -37,11 +36,15 @@ body {
 /* --------------------main------------------- */
 .jumbotron {
     background: rgba(121, 125, 89, .9);
+    min-height: 610px;
 }
 .img-thumbnail {
     background-color: rgba(108, 89, 83, 1)
     ;
     border: 1px solid rgba(108, 89, 83, 1);
+}
+button {
+    letter-spacing: .1rem;
 }
 .btn-outline-primary {
     margin-bottom: 1rem;

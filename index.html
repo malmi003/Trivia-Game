@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Neucha"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
         crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
@@ -21,15 +23,23 @@
             <h1 class="display-4">Name that Vegetable Seedling!</h1>
             <p class="lead">Do you know what's popping up in your garden?</p>
             <hr class="my-4">
-            <h3>
-                <button id="startBtn" type="button" class="btn btn-outline-primary btn-lg" value=0><span id="startBtnText">Time to test that knowledge!</span></button>
-            </h3>
             <section id="summary">
-                <h3 id="summaryTitle"></h3>
-                <p>Correct Answers: <span id="winCount"></span></p>
-                <p>Incorrect Answers: <span id="lossCount"></span></p>
-                <p>Unanswered: <span id="unansweredCount"></span></p>
+                <h3 id="summaryTitle" class="mb-4"></h3>
+                <p>Correct Answers:
+                    <span id="winCount"></span>
+                </p>
+                <p>Incorrect Answers:
+                    <span id="lossCount"></span>
+                </p>
+                <p>Unanswered:
+                    <span id="unansweredCount"></span>
+                </p>
             </section>
+            <h3>
+                <button id="startBtn" type="button" class="btn btn-outline-primary btn-lg" value=0>
+                    <span id="startBtnText">Time to test that knowledge!</span>
+                </button>
+            </h3>
             <section id="statusSection">
                 <h3 id="status"></h3>
                 <p id="plantName"></p>
