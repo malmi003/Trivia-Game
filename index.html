@@ -22,8 +22,14 @@
             <p class="lead">Do you know what's popping up in your garden?</p>
             <hr class="my-4">
             <h3>
-                <button id="startBtn" type="button" class="btn btn-outline-primary btn-lg" value=0>Time to test that knowledge!</button>
+                <button id="startBtn" type="button" class="btn btn-outline-primary btn-lg" value=0><span id="startBtnText">Time to test that knowledge!</span></button>
             </h3>
+            <section id="summary">
+                <h3 id="summaryTitle"></h3>
+                <p>Correct Answers: <span id="winCount"></span></p>
+                <p>Incorrect Answers: <span id="lossCount"></span></p>
+                <p>Unanswered: <span id="unansweredCount"></span></p>
+            </section>
             <section id="statusSection">
                 <h3 id="status"></h3>
                 <p id="plantName"></p>
@@ -31,7 +37,7 @@
             </section>
             <section id="quizSection">
                 <h3>Time remaining:
-                    <span id="timer">30 seconds</span>
+                    <span id="timer">20 seconds</span>
                 </h3>
                 <img id="plantPic" class="img-thumbnail mb-3" src="http://via.placeholder.com/250x250">
 
@@ -54,7 +60,7 @@
         </div>
     </article>
     <footer class="footer">
-        <p>Images taken from the Farmer's Almanac</p>
+        <p>Images from the Farmer's Almanac & Unsplash.com</p>
     </footer>
     <!-- Bootstrap -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
