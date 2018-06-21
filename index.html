@@ -19,26 +19,37 @@
     <article class="container">
         <div class="jumbotron text-center my-5">
             <h1 class="display-4">Name that Vegetable Seedling!</h1>
-            <p class="lead">Do you know what's popping up in the garden?</p>
+            <p class="lead">Do you know what's popping up in your garden?</p>
             <hr class="my-4">
             <h3>
                 <button id="startBtn" type="button" class="btn btn-outline-primary btn-lg" value=0>Time to test that knowledge!</button>
             </h3>
+            <section id="statusSection">
+                <h3 id="status"></h3>
+                <p id="plantName"></p>
+                <img id="plantPic2" class="img-thumbnail mb-3" src="http://via.placeholder.com/250x250">
+            </section>
             <section id="quizSection">
-                <p id="status"></p>
-                <p id="statusMessage"></p>
                 <h3>Time remaining:
                     <span id="timer">30 seconds</span>
                 </h3>
                 <img id="plantPic" class="img-thumbnail mb-3" src="http://via.placeholder.com/250x250">
 
                 <div class="btn-group-vertical mx-4 ml-md-5">
-                    <button id="firstBtn" type="button" class="btn btn-outline-primary btn-lg" value=1>Squash</button>
-                    <button id="secondBtn" type="button" class="btn btn-outline-primary btn-lg" value=2>Tomato</button>
-                    <button id="thirdBtn" type="button" class="btn btn-outline-primary btn-lg" value=3>Primary</button>
-                    <button id="fourthBtn" type="button" class="btn btn-outline-primary btn-lg" value=4>Primary</button>
+                    <button id="btn1" type="button" class="btn btn-outline-primary btn-lg" value=1>
+                        <span>Primary</span>
+                    </button>
+                    <button id="btn2" type="button" class="btn btn-outline-primary btn-lg" value=2>
+                        <span>Primary</span>
+                    </button>
+                    <button id="btn3" type="button" class="btn btn-outline-primary btn-lg" value=3>
+                        <span>Primary</span>
+                    </button>
+                    <button id="btn4" type="button" class="btn btn-outline-primary btn-lg" value=4>
+                        <span>Primary</span>
+                    </button>
+                    <p>Select the plant name that matches the seedling picture.</p>
                 </div>
-                <p>Select the plant name that matches the seedling picture.</p>
             </section>
         </div>
     </article>

@@ -38,6 +38,11 @@ body {
 .jumbotron {
     background: rgba(121, 125, 89, .9);
 }
+.img-thumbnail {
+    background-color: rgba(108, 89, 83, 1)
+    ;
+    border: 1px solid rgba(108, 89, 83, 1);
+}
 .btn-outline-primary {
     margin-bottom: 1rem;
     color: inherit;
