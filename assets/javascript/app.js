@@ -1,18 +1,4 @@
-/* 
-*give them 30 seconds per Q
- create arrays with question, series of answers (or randomly populate answers from other array of options)
- * reset/start function that starts the game and resets it when it's done
- * start timer for set period for each question
-    * populate the questions and answers for each new question
-    * when timer expires show times up with correct answer
-    * after set period, go to next question
-* when game is over, show total wins and losses and restart button
-* need to find way to randomly assign to multiple choice.
-
-*/
-
-
-
+//  Can clean up functions so don't have to so can for example addHide($("")), removeHide, changeHtml()
 
 // -------------declaring variables--------------
 
@@ -218,7 +204,6 @@ $(document).ready(function () {
     // -------------Playing the Game--------------
     $("#summary").addClass("d-none");
     restart();
-
 
     $("#startBtn").on("click", function () {
         $("#startBtn").addClass("d-none");
